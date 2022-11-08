@@ -49,8 +49,46 @@ Input variables (based on physicochemical tests):
 Output variable (based on sensory data):
 12 - quality (score between 0 and 10)
 
-## Data Preparation
+### Menangani Missing Value
 
+Untuk mendeteksi missing value digunakan fungsi isnull().sum() dan diperoleh:
+Tabel 1. Hasil Deteksi Missing Value
+
+Fitur | Jumlah Missing Value
+----- | ---------------------
+fixed acidity | 0
+volatile acidity | 0
+citric acid | 0
+residual sugar | 0
+chlorides | 0
+free sulfur dioxide | 0
+total sulfur dioxide | 0
+density | 0
+pH | 0
+sulphates | 0
+alcohol | 0
+quality | 0
+
+Dari Tabel 2. terlihat bahwa setiap fitur tidak memiliki Missing Value (NULL maupun NAN) sehingga dapat dilanjutkan ke tahapan selanjutnya yaitu menangani outliers.
+
+### Menangani Outliers
+
+Pada kasus ini, untuk mendeteksi outliers digunakan teknis visualisasi data (boxplot). Kemudian untuk menangani outliers digunakan metode IQR.
+
+Seltman dalam “Experimental Design and Analysis” [2] menyatakan bahwa outliers yang diidentifikasi oleh boxplot (disebut juga “boxplot outliers”) didefinisikan sebagai data yang nilainya 1.5 IQR di atas Q3 atau 1.5 IQR di bawah Q1.
+
+Berikut persamaannya:
+
+  Batas bawah = Q1 - 1.5 * IQR
+  Batas atas = Q3 + 1.5 * IQR
+  
+Tabel 2. Visualisasi Boxplot Sebelum dan Sesudah Dikenakan Metode IQR.
+
+Cek Outlier Pada Fitur | Setelah Digunakan Metode IQR
+---------------------- | ----------------------------
+!
+
+## Data Preparation
 ## Modeling
 
 ## Evaluation
