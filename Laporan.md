@@ -13,7 +13,8 @@ kualitas wine semakin gencar dilakukan agar dapat menarik minat konsumen. Salah 
 ## Business Understanding
 
 ## Problem Statements
-
+Bagaimana cara menentukan kualitas Wine yang baik dengan metode Regresi?
+Bagaimana cara menentukan model yang baik dalam metode regresi pada kasus penentuan kualitas barang?
 
 ## Goals
 Membangun model terbaik untuk melakukan prediksi kualitas wine yang berguna menjadi pedoman dalam meningkatkan kualitas barang yang berdampak pada peningkatan pendapatan.
@@ -36,19 +37,19 @@ Informasi Dataset
 * Area: Business
 
 ## Variabel-variabel pada WIne Quality Data Set :
-Input variables (based on physicochemical tests):
-1 - fixed acidity
-2 - volatile acidity
-3 - citric acid
-4 - residual sugar
-5 - chlorides
-6 - free sulfur dioxide
-7 - total sulfur dioxide
-8 - density
-9 - pH
-10 - sulphates
-11 - alcohol
-Output variable (based on sensory data):
+Input variables (based on physicochemical tests): <br>
+1 - fixed acidity : Keasaman tetap dengan nilai 4,6 sampai 15,9 <br>
+2 - volatile acidity : Keasaman mudah menguap dengan nilai 0,12 sampai 1,58 <br>
+3 - citric acid : asam sitrat dengan nilai 0 sampai 1 <br>
+4 - residual sugar : sisa gula dengan nilai 0,9 sampai 15,5 <br>
+5 - chlorides : klorida dengan nilai 0,01 sampai 0,61 <br>
+6 - free sulfur dioxide : sulfur bebas dioksida dengan nilai 1 sampai 68 <br>
+7 - total sulfur dioxide : total sulfur dioksida dengan nilai 6 sampai 289 <br>
+8 - density : kepadatan dengan nilai 0,99 sampai 1 <br>
+9 - pH : pH dengan nilai 2,74 sampai 4,01 <br>
+10 - sulphates : sulfat dengan nilai 0,33 sampai 2 <br>
+11 - alcohol : tidak tersedia nilai informasi di sumber <br>
+Output variable (based on sensory data): <br>
 12 - quality (score between 0 and 10)
 
 ### Menangani Missing Value
