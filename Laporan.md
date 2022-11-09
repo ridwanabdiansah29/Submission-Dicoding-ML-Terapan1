@@ -13,7 +13,7 @@ kualitas wine semakin gencar dilakukan agar dapat menarik minat konsumen. Salah 
 ## Business Understanding
 
 ## Problem Statements
-Perusahaan pembuat wine membutuhkan model terbaik untuk melakukan prediksi untuk kualitas wine yang berguna menjadi pedoman dalam meningkatkan kualitas barang yang berdampak pada peningkatan pendapatan.
+
 
 ## Goals
 Membangun model terbaik untuk melakukan prediksi kualitas wine yang berguna menjadi pedoman dalam meningkatkan kualitas barang yang berdampak pada peningkatan pendapatan.
@@ -22,8 +22,10 @@ Membangun model terbaik untuk melakukan prediksi kualitas wine yang berguna menj
 Menawarkan solusi sistem prediksi dengan metode regresi. Untuk mendapatkan solusi terbaik, akan digunakan tiga model yang berbeda (KNN, RandomForest, Boosting) dengan hyperparameter tuning GridSearchCV. Selain itu, untuk mengukur kinerja model digunakan metrik Mean Squared Error (MSE) dimana model terbaik nantinya harus memperoleh nilai MSE terkecil dari dataset uji.
 
 ## Data Understanding
-Berdasarkan sumber dataset: UCI Machine Learning Repository - Wine Quality Dataset diperoleh informasi:
+Berdasarkan sumber dataset: [Wine Quality Data Set](https://archive.ics.uci.edu/ml/datasets/wine+quality) diperoleh informasi:
+
 Abstrak: Dua set data disertakan, terkait dengan sampel anggur vinho verde merah dan putih, dari utara Portugal. Tujuannya adalah untuk memodelkan kualitas anggur berdasarkan tes fisikokimia. 
+
 Informasi Dataset
 * Data Set Characteristics: Multivariate
 * Attribute Characteristics: Real
