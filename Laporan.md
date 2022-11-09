@@ -69,7 +69,7 @@ sulphates | 0
 alcohol | 0
 quality | 0
 
-Dari Tabel 2. terlihat bahwa setiap fitur tidak memiliki Missing Value (NULL maupun NAN) sehingga dapat dilanjutkan ke tahapan selanjutnya yaitu menangani outliers.
+Dari Tabel 1. terlihat bahwa setiap fitur tidak memiliki Missing Value (NULL maupun NAN) sehingga dapat dilanjutkan ke tahapan selanjutnya yaitu menangani outliers.
 
 ### Menangani Outliers
 
@@ -167,13 +167,13 @@ Berikut output yang dihasilkan dari metode StandardScaler dengan menggunakan fun
 
 Tabel 5. Hasil Proses Standarisasi Pada Setiap Fitur Pada Data Latih
 
-	| free sulfur dioxide |	total sulfur dioxide | density | alcohol | CFVP
-- | ------------------- | -------------------- | ------- | ------- | ----
+N | free sulfur dioxide | total sulfur dioxide | density | alcohol | CFVP
+--- | ------------------- | -------------------- | ------- | ------- | ----
 446 | -0.900488 | -0.413917 | 0.686706 | -1.087267 | 0.474663
 685 | 2.330928 | 1.189503 | 0.308333 | -0.984725 | -0.605762
 616 | 0.138181 | 1.737012 | 0.611032 | -0.677098 | -0.627900
 408 | 0.484405 | 0.016269 | -1.205162 | 1.373748 | -1.332822
-121	-1.015896	-0.922318	0.434457	-1.189810	-0.031785
+121 | -1.015896 | -0.922318 | 0.434457 | -1.189810 | -0.031785
 
 ## Reduksi Dimensi dengan PCA
 PCA umumnya digunakan ketika variabel dalam data yang memiliki korelasi yang tinggi. Korelasi tinggi ini menunjukkan data yang berulang atau redundant. Sebelumnya sudah dilakukan proses untuk melihat hubungan dan korelasi dengan pairplot(), namun setelah melewati proses transformasi data (standarisasi dan non-linear scaling) dimungkinkan terjadi perubahan korelasi antar fiturnya (meskipun relatif kecil). Untuk itu perlu dicek kembali korelasi antar fitur dengan menggunakan pairplot() dengan output sebagai berikut.
@@ -245,8 +245,8 @@ n_jobs: jumlah job (pekerjaan) yang digunakan secara paralel. Ia merupakan kompo
 Untuk menentukan nilai hyperparameter (n_estimator & max_depth) di atas, kita akan melakukan tuning dengan GridSearchCV. Keuntungan utama dari Grid Search adalah akurasi pembelajaran yang tinggi dan kemampuan pemrosesan paralel pada pelatihan setiap SVM, karena independen satu sama lain[4].
 
 Tabel 7. Hasil Hyperparameter Tuning model GridSearchCV dengan Random Forest
- | Daftar Nilai | Nilai Terbaik
- - | ---------- | --------------
+ Keterangan | Daftar Nilai | Nilai Terbaik
+ ---------- | ------------ | --------------
  n_estimators | 10, 20, 30, 40, 50, 60, 70, 80, 90 | 30
  max_depth | 4, 8, 16, 32 | 16
  MSE Data Latih | | 0.049292350984323684
@@ -269,8 +269,8 @@ random_state: digunakan untuk mengontrol random number generator yang digunakan.
 Untuk menentukan nilai hyperparameter (n_estimator & learning_rate) di atas, kita akan melakukan tuning dengan GridSearchCV.
 
 Tabel 8. Hasil Hyperparameter Tuning model RandomizedSearchCV dengan AdaBoosting
- | Daftar Nilai | Nilai Terbaik
- - | ---------- | --------------
+Keterangan | Daftar Nilai | Nilai Terbaik
+---------- | ------------ | --------------
 n_estimators | 10, 20, 30, 40, 50, 60, 70, 80, 90 | 90
 learning_rate | 0.001, 0.01, 0.1, 0.2 | 0.2
 MSE Data Latih | | 0.33116537794773415
@@ -283,8 +283,8 @@ Dari hasil output di atas diperoleh nilai MSE terbaik dalam jangkauan parameter 
 Pada tahap ini, hanya dibatasi pada data latih karena penggunaan data uji akan dilakukan pada proses evaluasi model. Berdasarkan DataFrame df_models diperoleh:
 
 Tabel 9. Nilai MSE pada setiap model dengan data latih.
- | KNN | RandomForest | Boosting
-- | -- | ------------ | ---------
+Keterangan | KNN | RandomForest | Boosting
+---------- | --- | ------------ | ---------
 Train MSE | 0.275889 | 0.050118 | 0.32955
 
 Dari Tabel 9. di atas, perlu diperhatikan bahwa hasil MSE pada tabel sedikit berbeda dengan MSE hasil analisa proses hyperparameter tuning sebelumnya (khususnya pada Random Forest dan Boosting). Hal ini disebabkan model pada proses hyperparameter tuning menggunakan model GridSearchCV berbeda dengan Tabel 9. yang menggunakan model Random Forest dan Boosting. Terlepas dari hal tersebut, model terbaik dipegang oleh Random Forest dengan nilai MSE 0.050118 (terkecil).
@@ -307,8 +307,8 @@ Cara kerja metrik MSE adalah dengan menghitung selisih hasil prediksi dengan nil
 Berdasarkan DataFrame df_models diperoleh:
 
 Tabel 10. Nilai MSE pada Setiap Model dengan Data Uji
- | KNN | RandomForest | Boosting
- - | -- | ----------- | --------
+ Keterangan | KNN | RandomForest | Boosting
+ -- | --- | ------------ | --------
 Test MSE | 0.353505 | 0.377711 | 0.357394
 
 Untuk memudahkan, dilakukan plot hasil evaluasi model dengan bar chart sebagai berikut:
